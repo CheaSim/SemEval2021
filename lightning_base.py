@@ -21,6 +21,7 @@ from transformers import (
     PretrainedConfig,
     PreTrainedTokenizer,
 )
+from transformers.modeling_auto import AutoModelForMultipleChoice
 from transformers.optimization import (
     Adafactor,
     get_cosine_schedule_with_warmup,
@@ -42,6 +43,7 @@ MODEL_MODES = {
     "language-modeling": AutoModelWithLMHead,
     "summarization": AutoModelForSeq2SeqLM,
     "translation": AutoModelForSeq2SeqLM,
+    "multiple-choice": AutoModelForMultipleChoice
 }
 
 
