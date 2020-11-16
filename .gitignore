@@ -129,3 +129,5 @@ MNIST
 .DS_Store
 
 cached*
+semeval-pl-roberta/
+output/

@@ -8,7 +8,7 @@ export NUM_EPOCHS=8
 export SEED=7
 export OUTPUT_DIR_NAME=semeval-pl-roberta
 export CURRENT_DIR=${PWD}
-export OUTPUT_DIR=${CURRENT_DIR}/${OUTPUT_DIR_NAME}
+export OUTPUT_DIR=${CURRENT_DIR}/output/${OUTPUT_DIR_NAME}
 
 # Make output directory if it doesn't exist
 mkdir -p $OUTPUT_DIR
