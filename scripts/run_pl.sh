@@ -1,10 +1,10 @@
 export TASK="semeval"
 export DATA_DIR=./dataset/task1/
-export MAX_LENGTH=128
+export MAX_LENGTH=512
 export LEARNING_RATE=1e-5
 export BERT_MODEL="/home/xx/pretrained_model/roberta-base"
 export BATCH_SIZE=1
-export NUM_EPOCHS=3
+export NUM_EPOCHS=8
 export SEED=7
 export OUTPUT_DIR_NAME=semeval-pl-roberta
 export CURRENT_DIR=${PWD}
@@ -15,7 +15,9 @@ mkdir -p $OUTPUT_DIR
 # Add parent directory to python path to access lightning_base.py
 export PYTHONPATH="../":"${PYTHONPATH}"
 
-CUDA_VISIBLE_DEVICES=0,1,2 python3 main.py --gpus 0 --data_dir $DATA_DIR \
+echo $OUTPUT_DIR
+
+CUDA_VISIBLE_DEVICES=0 python3 main.py --gpus 1 --data_dir $DATA_DIR \
 --task $TASK \
 --model_name_or_path $BERT_MODEL \
 --output_dir $OUTPUT_DIR \
